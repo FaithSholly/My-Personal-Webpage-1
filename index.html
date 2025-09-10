@@ -1,0 +1,205 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sholedolu Aminat — Personal Website</title>
+  <meta name="description" content="Personal website / CV / Portfolio — replace with your details" />
+  <style>
+    :root{--bg:#f7f7fb;--card:#ffffff;--accent:#6b46c1;--muted:#6b7280;--glass:rgba(255,255,255,0.6)}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#111827;background:var(--bg);margin:0}
+    .container{width:min(1100px,94%);margin:30px auto}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:12px;flex-shrink:0;object-fit:cover;border:4px solid var(--card);box-shadow:0 6px 18px rgba(99,102,241,0.08)}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 30px rgba(15,23,42,0.04)}/* two-column details */
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skill{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:600}
+
+/* portfolio */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:16px}
+.project{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfbff);border:1px solid rgba(99,102,241,0.05)}
+.project h3{margin:0;font-size:1rem}
+.project p{color:var(--muted);font-size:0.95rem}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+.gallery img{width:100%;height:100px;object-fit:cover;border-radius:8px;cursor:pointer}
+
+footer{margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem;padding:12px}
+
+/* responsive */
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr} .gallery{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:560px){.gallery{grid-template-columns:repeat(2,1fr)} .avatar{width:96px;height:96px}}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(10,11,15,0.75);display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;pointer-events:none;transition:opacity .18s}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{max-width:90%;max-height:80%;border-radius:10px}
+.close-btn{position:fixed;right:18px;top:18px;background:var(--card);border-radius:999px;padding:8px 10px;cursor:pointer}
+
+  </style>
+</head>
+<body>
+  <div class="container"><header>
+  <!-- Replace the src below with your own photo file path or URL -->
+  <img class="avatar" src="https://picsum.photos/seed/you/400/400" alt="Your photo">
+  <div>
+    <h1>Sholedolu Aminat Omowunmi</h1>
+    <p class="lead">Short tagline — e.g., Aspiring Data Analyst • Curious Problem Solver • Lifelong Learner</p>
+    <p style="margin-top:8px;color:var(--muted);font-size:0.95rem">Location • Email: <a href="mailto:aminatomo342@gmail.com">aminatomo342@gmail.com</a> • Phone: +2348156117901</p>
+  </div>
+</header>
+
+<div class="hero-grid">
+  <main>
+    <section class="card">
+      <h2>About Me</h2>
+      <p style="color:var(--muted)">A short biography paragraph (2–3 sentences). Replace this text with a concise summary from your CV: your education, career goal (e.g., data analyst), strengths, and what you bring to a team.</p>
+
+      <h3 style="margin-top:12px">Education</h3>
+      <p style="color:var(--muted)">University Name — Degree, Year</p>
+
+      <h3 style="margin-top:12px">Experience</h3>
+      <div class="row">
+        <div>
+          <strong>Role A</strong>
+          <p style="color:var(--muted);margin:4px 0">Company • Dates</p>
+        </div>
+        <div>
+          <strong>Role B</strong>
+          <p style="color:var(--muted);margin:4px 0">Company • Dates</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:12px">Skills</h3>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Excel</span>
+        <span class="skill">Data Visualization</span>
+        <span class="skill">Communication</span>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <article class="project">
+          <h3>Project One</h3>
+          <p>Short description — tools used, your role, and outcome.</p>
+        </article>
+        <article class="project">
+          <h3>Project Two</h3>
+          <p>Short description — tools used, your role, and outcome.</p>
+        </article>
+        <article class="project">
+          <h3>Project Three</h3>
+          <p>Short description — tools used, your role, and outcome.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>Contact</h2>
+      <p style="color:var(--muted)">Want to work together or just say hi? Use the form below or email me directly at <a href="mailto:you@example.com">you@example.com</a>.</p>
+      <form id="contactForm">
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <input required placeholder="Sholedolu Aminat" id="name" style="flex:1;padding:8px;border-radius:8px;border:1px solid #eee">
+          <input required placeholder="aminatomo342@gmail.com" id="email" style="flex:1;padding:8px;border-radius:8px;border:1px solid #eee">
+        </div>
+        <textarea required placeholder="Message" id="message" style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid #eee" rows="4"></textarea>
+        <button type="submit" style="margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;border:0;cursor:pointer">Send Message</button>
+        <p id="formStatus" style="color:var(--muted);margin-top:8px"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <aside>
+    <div class="card">
+      <h3>Quick CV</h3>
+      <p style="color:var(--muted);margin:0">Download: <a href="#">Resume (PDF)</a></p>
+      <hr style="margin:12px 0">
+      <h3>Highlights</h3>
+      <ul style="color:var(--muted);padding-left:18px">
+        <li>2+ years teaching / tutoring experience</li>
+        <li>Strong in data analysis & problem solving</li>
+        <li>Volunteer: Community teaching program</li>
+      </ul>
+      <hr style="margin:12px 0">
+      <h3>Image Gallery</h3>
+      <p style="color:var(--muted);margin:6px 0">Click an image to view.</p>
+      <div class="gallery">
+        <!-- Replace these with your own image URLs or local paths (photo1.jpg ... photo5.jpg) -->
+        <img src="https://SD card.photos/seed/pic1/400/300" alt="photo1" data-full="https://picsum.photos/seed/pic1/1200/900">
+        <img src="https://picsum.photos/seed/pic2/400/300" alt="photo2" data-full="https://picsum.photos/seed/pic2/1200/900">
+        <img src="https://picsum.photos/seed/pic3/400/300" alt="photo3" data-full="https://picsum.photos/seed/pic3/1200/900">
+        <img src="https://picsum.photos/seed/pic4/400/300" alt="photo4" data-full="https://picsum.photos/seed/pic4/1200/900">
+        <img src="https://picsum.photos/seed/pic5/400/300" alt="photo5" data-full="https://picsum.photos/seed/pic5/1200/900">
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Links</h3>
+      <p style="margin:6px 0;color:var(--muted)"><a href="#">GitHub</a> • <a href="#">LinkedIn</a> • <a href="#">Portfolio</a></p>
+    </div>
+  </aside>
+</div>
+
+<footer class="card" style="margin-top:18px">
+  <p style="margin:6px 0;color:var(--muted)">Made with care • Replace text & images with your CV content • Template by ChatGPT</p>
+</footer>
+
+  </div>  <!-- Lightbox for gallery -->  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <button id="closeBtn" class="close-btn" aria-label="Close">✕</button>
+    <img id="lightboxImg" src="" alt="Expanded photo">
+  </div>  <script>
+    // Simple DOM interactions and form handling
+    document.addEventListener('click', function(e){
+      if(e.target.matches('.gallery img')){
+        const url = e.target.getAttribute('data-full') || e.target.src;
+        const lb = document.getElementById('lightbox');
+        document.getElementById('lightboxImg').src = url;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+      }
+    });
+    document.getElementById('closeBtn').addEventListener('click', function(){
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+    });
+    document.getElementById('lightbox').addEventListener('click', function(e){
+      if(e.target.id === 'lightbox'){
+        this.classList.remove('open');
+        this.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Contact form (demo only — uses mailto)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){
+        document.getElementById('formStatus').textContent = 'Please fill all fields.';
+        return;
+      }
+      // For a real site, send via server / email API. Here we open mail client as demo.
+      const subject = encodeURIComponent('Contact from personal website');
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+      document.getElementById('formStatus').textContent = 'Opening your email client...';
+    });
+
+    // Accessibility: keyboard close lightbox with Escape
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ document.getElementById('lightbox').classList.remove('open'); }});
+  </script></body>
+</html>
